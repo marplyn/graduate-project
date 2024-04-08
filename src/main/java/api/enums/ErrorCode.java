@@ -1,0 +1,10 @@
+package api.enums;
+
+public enum ErrorCode {
+    TARIFF_NOT_FOUND,
+    ORDER_NOT_FOUND,
+    ORDER_IMPOSSIBLE_TO_DELETE,
+    TRY_LATER,
+    LOAN_ALREADY_APPROVED,
+    LOAN_CONSIDERATION
+}
