@@ -6,7 +6,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @ToString
 @SuperBuilder(setterPrefix = "set", toBuilder = true)
-public class DeleteOrderRequest {
+public class DeleteOrderPayload {
 
     private Long userId;
 

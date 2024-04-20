@@ -6,7 +6,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @ToString
 @SuperBuilder(setterPrefix = "set", toBuilder = true)
-public class PostOrderRequest {
+public class PostOrderPayload {
 
     private Long userId;
 
