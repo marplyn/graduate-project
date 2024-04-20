@@ -1,5 +1,6 @@
 package api.steps;
 
+import api.commons.CommonSteps;
 import api.models.CommonRequest;
 import io.restassured.specification.RequestSpecification;
 

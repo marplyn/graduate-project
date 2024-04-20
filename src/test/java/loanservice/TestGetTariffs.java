@@ -1,6 +1,7 @@
 package loanservice;
 
 import api.models.CommonRequest;
+import api.models.get_tariffs.GetTariffsResponse;
 import api.steps.LoanServiceSteps;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,5 +21,7 @@ public class TestGetTariffs {
     @Test
     void getTariffsTest() {
         Response response = loanServiceSteps.getTariffs(commonRequest);
+
+        GetTariffsResponse actualTariffs = GetTariffsResponse.createFrom(response);
     }
 }

@@ -1,17 +1,15 @@
-package api.steps;
+package api.commons;
 
 import api.models.CommonRequest;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.config.LogConfig;
-import io.restassured.config.RestAssuredConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.internal.RequestSpecificationImpl;
-import io.restassured.internal.common.assertion.AssertParameter;
 
-import java.io.PrintStream;
 import java.util.Map;
-import java.util.Set;
 
 public class CommonBackendSteps {
 
@@ -22,12 +20,17 @@ public class CommonBackendSteps {
     }
 
     protected RequestSpecBuilder getRequestSpecBuilder(CommonRequest request, String path, Object payload) {
+        RestAssured.config = RestAssured.config()
+                .logConfig(LogConfig.logConfig()
+                        .enableLoggingOfRequestAndResponseIfValidationFails(LogDetail.ALL)
+                        .enablePrettyPrinting(true));
+        RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
+
         Map<String, Object> queryParams = request.getQueryParams();
 
         return new RequestSpecBuilder()
                 .setBasePath(path)
                 .setBody(payload)
-                .addQueryParams(queryParams)
-                .log(LogDetail.ALL);
+                .addQueryParams(queryParams);
     }
 }
