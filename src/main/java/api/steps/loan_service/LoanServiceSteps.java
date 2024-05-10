@@ -1,13 +1,18 @@
 package api.steps.loan_service;
 
+import api.entity.credit_app.Tariff;
 import api.models.CommonRequest;
 import api.models.delete_order.DeleteOrderPayload;
 import api.models.get_status_order.GetStatusOrderRequest;
+import api.models.get_tariffs.TariffResponse;
 import api.models.post_order.PostOrderPayload;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoanServiceSteps extends CommonLoanServiceSteps {
 
@@ -30,5 +35,19 @@ public class LoanServiceSteps extends CommonLoanServiceSteps {
     public Response deleteOrder(CommonRequest request, DeleteOrderPayload payload) {
         return given().spec(getDeleteOrderRequestSpec(request, payload))
                 .delete();
+    }
+
+    public void tariffListShouldBeEqualToExpected(List<TariffResponse> actualTariffs,
+                                                  List<Tariff> expectedTariffs) {
+        assertThat(actualTariffs).hasSameSizeAs(expectedTariffs);
+
+        for (int i = 0; i < actualTariffs.size(); i++) {
+            TariffResponse actualTariff = actualTariffs.get(i);
+            Tariff expectedTariff = expectedTariffs.get(i);
+
+            assertThat(actualTariff.getId()).isEqualTo(expectedTariff.getId());
+            assertThat(actualTariff.getInterestRate()).isEqualTo(expectedTariff.getInterestRate());
+            assertThat(actualTariff.getType()).isEqualTo(expectedTariff.getType());
+        }
     }
 }

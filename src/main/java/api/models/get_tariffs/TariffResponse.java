@@ -5,7 +5,7 @@ import lombok.*;
 
 @Getter
 @ToString
-public class Tariff {
+public class TariffResponse {
 
     private Integer id;
 

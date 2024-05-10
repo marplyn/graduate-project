@@ -3,15 +3,18 @@ package loanservice;
 import api.entity.credit_app.Tariff;
 import api.models.CommonRequest;
 import api.models.get_tariffs.GetTariffsResponse;
+import api.models.get_tariffs.TariffResponse;
 import api.steps.fixture.loan_service.TariffFixtureSteps;
 import api.steps.loan_service.LoanServiceSteps;
 import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+@Epic("loan-service")
 class TestGetTariffs {
     private final LoanServiceSteps loanServiceSteps = new LoanServiceSteps();
 
@@ -24,10 +27,11 @@ class TestGetTariffs {
     @Description("Проверка получения успешного ответа с информацией о кредитных тарифах")
     void successGetTariffs() {
         Response response = loanServiceSteps.getTariffs(commonRequest);
+        loanServiceSteps.responseShouldIndicateThatRequestWasSuccessful(response);
 
-        GetTariffsResponse actualTariffs = GetTariffsResponse.createFrom(response);
+        List<TariffResponse> actualTariffs = GetTariffsResponse.createFrom(response).getTariffs();
 
         List<Tariff> expectedTariffs = tariffFixtureSteps.getTariffList();
-        System.out.println(expectedTariffs);
+        loanServiceSteps.tariffListShouldBeEqualToExpected(actualTariffs, expectedTariffs);
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 @JsonRootName("data")
 public class GetTariffsResponse {
 
-    private List<Tariff> tariffs;
+    private List<TariffResponse> tariffs;
 
     public static GetTariffsResponse createFrom(Response response) {
        return response.getBody().as(GetTariffsResponse.class);

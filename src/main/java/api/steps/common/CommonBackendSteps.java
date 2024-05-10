@@ -7,13 +7,10 @@ import io.restassured.config.LogConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.internal.RequestSpecificationImpl;
 
 import java.util.Map;
 
 public class CommonBackendSteps {
-
-    private RequestSpecificationImpl spec;
 
     protected RequestSpecBuilder getRequestSpecBuilder(CommonRequest request, String path) {
         return getRequestSpecBuilder(request, path, "empty_payload");
