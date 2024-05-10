@@ -1,4 +1,4 @@
-package api.commons;
+package api.steps.common;
 
 import api.models.CommonRequest;
 import io.restassured.RestAssured;

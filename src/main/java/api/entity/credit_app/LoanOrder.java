@@ -1,4 +1,4 @@
-package api.entity;
+package api.entity.credit_app;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

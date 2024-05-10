@@ -1,4 +1,4 @@
-package api.entity;
+package api.entity.credit_app;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,10 +14,10 @@ import lombok.ToString;
 public class Tariff {
 
     @Id
-    private Long id;
+    private Integer id;
 
     private String type;
 
     @Column(name = "interest_rate")
-    private Long interestRate;
+    private String interestRate;
 }

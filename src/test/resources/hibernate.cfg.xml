@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/MTS_Credit_App</property>
+        <property name="connection.username">user</property>
+        <property name="connection.password">1234</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <mapping class="api.entity.credit_app.LoanOrder"/>
+        <mapping class="api.entity.credit_app.Tariff"/>
+
+    </session-factory>
+</hibernate-configuration>

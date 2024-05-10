@@ -1,4 +1,4 @@
-package api.steps;
+package api.steps.loan_service;
 
 import api.models.CommonRequest;
 import api.models.delete_order.DeleteOrderPayload;

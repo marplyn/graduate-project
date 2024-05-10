@@ -1,6 +1,6 @@
-package api.steps;
+package api.steps.loan_service;
 
-import api.commons.CommonSteps;
+import api.steps.common.CommonSteps;
 import api.models.CommonRequest;
 import api.models.delete_order.DeleteOrderPayload;
 import api.models.post_order.PostOrderPayload;
