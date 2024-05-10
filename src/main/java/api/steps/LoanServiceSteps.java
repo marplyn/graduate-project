@@ -4,13 +4,14 @@ import api.models.CommonRequest;
 import api.models.delete_order.DeleteOrderPayload;
 import api.models.get_status_order.GetStatusOrderRequest;
 import api.models.post_order.PostOrderPayload;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
-
 
 import static io.restassured.RestAssured.given;
 
 public class LoanServiceSteps extends CommonLoanServiceSteps {
 
+    @Step("Отправить запрос GET loan-service/getTariffs")
     public Response getTariffs(CommonRequest request) {
         return given().spec(getTariffsRequestSpec(request))
                 .get();
