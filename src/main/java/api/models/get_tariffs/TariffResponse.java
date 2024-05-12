@@ -1,6 +1,5 @@
 package api.models.get_tariffs;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Getter
@@ -11,6 +10,5 @@ public class TariffResponse {
 
     private String type;
 
-    @JsonProperty("interest_rate")
     private String interestRate;
 }

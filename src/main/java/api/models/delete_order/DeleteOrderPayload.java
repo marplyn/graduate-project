@@ -8,7 +8,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder(setterPrefix = "set", toBuilder = true)
 public class DeleteOrderPayload {
 
-    private Long userId;
+    @Builder.Default
+    private Long userId = 3453L;
 
-    private String orderId;
+    @Builder.Default
+    private String orderId = "";
 }

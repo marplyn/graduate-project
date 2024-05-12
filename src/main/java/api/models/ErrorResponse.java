@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonRootName(value = "error")
-public class Error {
+public class ErrorResponse {
 
     private String code;
 

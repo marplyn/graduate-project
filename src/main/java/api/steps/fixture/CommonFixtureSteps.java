@@ -1,10 +1,7 @@
 package api.steps.fixture;
 
-import api.util.FixtureUtil;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class CommonFixtureSteps<T> {

@@ -8,7 +8,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder(setterPrefix = "set", toBuilder = true)
 public class PostOrderPayload {
 
-    private Long userId;
+    @Builder.Default
+    private Long userId = 34566546L;
 
-    private Integer tariffId;
+    @Builder.Default
+    private Integer tariffId = 1;
 }
