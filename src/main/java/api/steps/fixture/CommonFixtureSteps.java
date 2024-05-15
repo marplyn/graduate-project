@@ -6,10 +6,7 @@ import java.util.function.Function;
 
 public class CommonFixtureSteps<T> {
 
-    private final Class<T> entity;
-
     public CommonFixtureSteps(Class<T> entity) {
-        this.entity = entity;
     }
 
     protected <R> R executeInSession(Function<Session, R> operation) {

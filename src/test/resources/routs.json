@@ -1,6 +1,0 @@
-{
-  "get.tariffs.relative.uri": "loan-service/getTariffs",
-  "post.order.relative.uri": "loan-service/order",
-  "get.status.order.relative.uri": "loan-service/getStatusOrder?orderId=%s",
-  "delete.order.relative.uri": "loan-service/deleteOrder"
-}

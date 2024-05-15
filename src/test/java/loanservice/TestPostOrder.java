@@ -1,25 +1,23 @@
 package loanservice;
 
 import api.entity.credit_app.LoanOrder;
-import api.entity.credit_app.Tariff;
 import api.models.CommonRequest;
-import api.models.get_tariffs.GetTariffsResponse;
-import api.models.get_tariffs.TariffResponse;
 import api.models.post_order.PostOrderPayload;
 import api.models.post_order.PostOrderResponse;
 import api.steps.fixture.loan_service.LoanOrderFixtureSteps;
-import api.steps.fixture.loan_service.TariffFixtureSteps;
 import api.steps.loan_service.LoanServiceSteps;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-@Epic("loan-service")
-public class TestPostOrder {
+@Epic("main")
+@Feature("loan-service")
+@Story("POST /order. Подача заявки на кредит")
+class TestPostOrder {
 
     private final LoanServiceSteps loanServiceSteps = new LoanServiceSteps();
 

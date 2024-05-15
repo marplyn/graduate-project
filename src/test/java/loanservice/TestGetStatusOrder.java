@@ -6,12 +6,16 @@ import api.steps.fixture.loan_service.LoanOrderFixtureSteps;
 import api.steps.loan_service.LoanServiceSteps;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@Epic("loan-service")
-public class TestGetStatusOrder {
+@Epic("main")
+@Feature("loan-service")
+@Story("GET /getStatusOrder. Получение статуса заявки")
+class TestGetStatusOrder {
 
     private final LoanServiceSteps loanServiceSteps = new LoanServiceSteps();
 
