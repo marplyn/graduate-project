@@ -33,7 +33,9 @@ class TestGetTariffs {
         Response response = loanServiceSteps.getTariffs(commonRequest);
         loanServiceSteps.responseShouldIndicateThatRequestWasSuccessful(response);
 
-        List<TariffResponse> actualTariffs = GetTariffsResponse.createFrom(response).getTariffs();
+        List<TariffResponse> actualTariffs = GetTariffsResponse.createFrom(response)
+                .getData()
+                .getTariffs();
 
         List<Tariff> expectedTariffs = tariffFixtureSteps.getTariffList();
         loanServiceSteps.tariffListShouldBeEqualToExpected(actualTariffs, expectedTariffs);

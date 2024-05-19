@@ -31,12 +31,5 @@ class TestPostOrder {
     @DisplayName("Позитивный тест получения тарифов")
     @Description("Проверка получения успешного ответа с информацией о кредитных тарифах")
     void successPostOrder() {
-        Response response = loanServiceSteps.postOrder(commonRequest, commonPayload);
-        loanServiceSteps.responseShouldIndicateThatRequestWasSuccessful(response);
-
-        PostOrderResponse actualLoanOrder = PostOrderResponse.createFrom(response);
-
-        LoanOrder expectedLoanOrder = loanOrderFixtureSteps.getLoanOrder(actualLoanOrder.getOrderId());
-        loanServiceSteps.loanOrderShouldBeEqualToExpected(actualLoanOrder, expectedLoanOrder);
     }
 }

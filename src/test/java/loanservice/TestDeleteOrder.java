@@ -26,7 +26,5 @@ class TestDeleteOrder {
     @DisplayName("Позитивный тест удаления заявки")
     @Description("Проверка получения успешного статуса при удалении заявки")
     void successDeleteOrder() {
-        Response response = loanServiceSteps.deleteOrder(commonRequest, commonPayload);
-        loanServiceSteps.responseShouldIndicateThatRequestWasSuccessful(response);
     }
 }

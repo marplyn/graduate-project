@@ -10,10 +10,9 @@ import java.util.List;
 @Getter
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonRootName("data")
 public class GetTariffsResponse {
 
-    private List<TariffResponse> tariffs;
+    private Data data;
 
     public static GetTariffsResponse createFrom(Response response) {
        return response.getBody().as(GetTariffsResponse.class);

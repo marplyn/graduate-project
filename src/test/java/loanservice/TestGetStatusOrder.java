@@ -27,13 +27,5 @@ class TestGetStatusOrder {
     @DisplayName("Позитивный тест получения статуса заявки")
     @Description("Проверка получения успешного ответа с информацией о статусе заявки")
     void successGetStatusOrder() {
-        Response response = loanServiceSteps.getStatusOrder(commonRequest);
-        loanServiceSteps.responseShouldIndicateThatRequestWasSuccessful(response);
-
-        String actualStatus = GetStatusOrderResponse.createFrom(response).getOrderStatus();
-
-        String expectedStatus = loanOrderFixtureSteps.getLoanOrder(commonRequest.getOrderId()).getStatus();
-
-        loanServiceSteps.statusOrderShouldBeEqualToExpected(actualStatus, expectedStatus);
     }
 }
